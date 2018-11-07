@@ -13,7 +13,7 @@ class CreatePostPhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_photos', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('post_photos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path');
             $table->string('thumb_path');
@@ -31,6 +31,6 @@ class CreatePostPhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_photos');
+        Schema::connection('pgsql')->dropIfExists('post_photos');
     }
 }

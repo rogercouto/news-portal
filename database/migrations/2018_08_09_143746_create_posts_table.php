@@ -13,7 +13,7 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->text('content')->nullable();
@@ -34,7 +34,7 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::connection('pgsql')->dropIfExists('posts');
     }
 }
 

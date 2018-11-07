@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Services\ConnectionService;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+
+    protected $connection = 'pgsql';
 
     protected $table = 'posts';
 

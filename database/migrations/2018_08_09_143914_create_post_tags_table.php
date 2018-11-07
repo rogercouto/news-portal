@@ -13,7 +13,7 @@ class CreatePostTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_tags', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('post_tags', function (Blueprint $table) {
             $table->integer('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('posts');
             $table->integer('tag_id')->unsigned();
@@ -28,6 +28,6 @@ class CreatePostTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_tags');
+        Schema::connection('pgsql')->dropIfExists('post_tags');
     }
 }

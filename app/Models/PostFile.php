@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PostFile extends Model
 {
 
+    protected $connection = 'pgsql';
+
     protected $table = 'post_files';
 
     protected $fillable = ['path','description','post_id'];

@@ -13,7 +13,7 @@ class CreatePostFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_files', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('post_files', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path');
             $table->string('description');
@@ -30,6 +30,6 @@ class CreatePostFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_files');
+        Schema::connection('pgsql')->dropIfExists('post_files');
     }
 }

@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PostPhoto extends Model
 {
 
+    protected $connection = 'pgsql';
+
     protected $table = 'post_photos';
 
     protected $fillable = ['path','thumb_path','description','post_id'];

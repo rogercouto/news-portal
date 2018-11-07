@@ -7,6 +7,9 @@ use phpDocumentor\Reflection\Types\String_;
 
 class Tag extends Model
 {
+
+    protected $connection = 'pgsql';
+
     protected $table = 'tags';
 
     protected $fillable = ['name'];
